@@ -1,0 +1,26 @@
+{
+  "name": "ck/RedisInterface",
+  "description": "Interface for Redis using Predis and PDOLite",
+  "require": {
+    "ck/PDOLite": "1.0.*",
+    "predis/predis": "1.1.*@dev"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://www.xenn.co.uk/projects/PDOLite.git"
+    }
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Chris Kay-Ayling",
+      "email": "ck@xenn.co.uk"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "RedisInterface.php"
+    ]
+  }
+}
