@@ -1,8 +1,6 @@
 <?php
 namespace RedisInterface;
 
-require_once 'vendor/autoload.php';
-
 /**
  * RedisInterface
  *
