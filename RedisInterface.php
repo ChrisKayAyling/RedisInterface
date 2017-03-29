@@ -50,7 +50,7 @@ class RedisInterface
                     'host' => $Settings['Host'],
                     'port' => $Settings['Port'],
                     'path' => $Settings['Socket'],
-                    'database' => $Settings['database']
+                    'database' => $Settings['Database']
                 )
             );
         } catch (\RedisException $e) {
@@ -101,17 +101,20 @@ class RedisInterface
             $this->errorInfo = $this->PDOLite->errorInfo;
             return FALSE;
         } else {
-            while ($row = $results) {
-                $rows[] = $row;
-            }
+            if (count($results) > 0) {
+                foreach ($results as $row) {
+                    $rows[] = $row;
+                }
 
-            if ($rows != NULL) {
-                $this->redis->set($key, serialize($rows));
-            }
+                if ($rows != NULL) {
+                    $this->redis->set($key, serialize($rows));
+                }
 
-            return $rows;
+                return $rows;
+            } else {
+                return array();
+            }
         }
-
     }
 
     /**
