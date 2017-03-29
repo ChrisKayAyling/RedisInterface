@@ -22,6 +22,8 @@ class RedisInterface
      */
     protected $redis = NULL;
 
+    public $errorInfo = array();
+
 
     public function __construct($Settings)
     {
@@ -57,6 +59,7 @@ class RedisInterface
 
     }
 
+
     /**
      * @param $query
      * @return string
@@ -86,7 +89,7 @@ class RedisInterface
     /**
      * @param $key
      * @param $query
-     * @return array
+     * @return array|bool
      */
     protected function queryAndSet($key, $query)
     {
@@ -94,16 +97,20 @@ class RedisInterface
 
         $results = $this->PDOLite->query($query);
 
+        if ($results == FALSE) {
+            $this->errorInfo = $this->PDOLite->errorInfo;
+            return FALSE;
+        } else {
+            while ($row = $results) {
+                $rows[] = $row;
+            }
 
-        while ($row = $results) {
-            $rows[] = $row;
+            if ($rows != NULL) {
+                $this->redis->set($key, serialize($rows));
+            }
+
+            return $rows;
         }
-
-        if ($rows != NULL) {
-            $this->redis->set($key, serialize($rows));
-        }
-
-        return $rows;
 
     }
 

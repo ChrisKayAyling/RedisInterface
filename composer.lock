@@ -9,11 +9,11 @@
     "packages": [
         {
             "name": "ck/PDOLite",
-            "version": "1.0.0",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://www.xenn.co.uk/projects/PDOLite.git",
-                "reference": "b3d59131e17e55b5035a3f0f27b489d5114b4e8a"
+                "reference": "864a84b823f1aced876fb3a967431030a1853710"
             },
             "type": "library",
             "autoload": {
@@ -28,7 +28,7 @@
                 }
             ],
             "description": "Data Layer Abstraction for MySQL",
-            "time": "2017-03-28 11:10:11"
+            "time": "2017-03-29 08:24:18"
         },
         {
             "name": "predis/predis",

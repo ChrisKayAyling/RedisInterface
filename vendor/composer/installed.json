@@ -1,30 +1,5 @@
 [
     {
-        "name": "ck/PDOLite",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://www.xenn.co.uk/projects/PDOLite.git",
-            "reference": "b3d59131e17e55b5035a3f0f27b489d5114b4e8a"
-        },
-        "time": "2017-03-28 11:10:11",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "PDOLite.php"
-            ]
-        },
-        "authors": [
-            {
-                "name": "Chris Kay-Ayling",
-                "email": "ck@xenn.co.uk"
-            }
-        ],
-        "description": "Data Layer Abstraction for MySQL"
-    },
-    {
         "name": "predis/predis",
         "version": "v1.1.x-dev",
         "version_normalized": "1.1.9999999.9999999-dev",
@@ -75,5 +50,30 @@
             "predis",
             "redis"
         ]
+    },
+    {
+        "name": "ck/PDOLite",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://www.xenn.co.uk/projects/PDOLite.git",
+            "reference": "864a84b823f1aced876fb3a967431030a1853710"
+        },
+        "time": "2017-03-29 08:24:18",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "PDOLite.php"
+            ]
+        },
+        "authors": [
+            {
+                "name": "Chris Kay-Ayling",
+                "email": "ck@xenn.co.uk"
+            }
+        ],
+        "description": "Data Layer Abstraction for MySQL"
     }
 ]
